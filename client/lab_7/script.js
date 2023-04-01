@@ -162,6 +162,8 @@ function injectHTML(list) {
     const filterDataButton = document.querySelector('#filter'); // This class name needs to be set on your form before you can listen for an event on it
     const loadDataButton = document.querySelector('#data_load');
     const generateListButton = document.querySelector('#generate');
+    const textField = document.querySelector('#resto')
+
   
     const loadAnimation = document.querySelector('#data_load_animation');
     loadAnimation.style.display = ('none');
@@ -218,6 +220,7 @@ function injectHTML(list) {
     injectHTML(restaurantsList);
   
   })
+  
     /*
       Now that you HAVE a list loaded, write an event listener set to your filter button
       it should use the 'new FormData(target-form)' method to read the contents of your main form
@@ -229,6 +232,10 @@ function injectHTML(list) {
       Fire it here and filter for the word "pizza"
       you should get approximately 46 results
     */
+   textField.addEventListener('input', (event)=> {
+       console.log('input', event.target.value);
+
+   }) 
   }
   
   /*
